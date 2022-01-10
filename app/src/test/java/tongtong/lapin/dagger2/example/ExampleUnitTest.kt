@@ -4,6 +4,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import tongtong.lapin.dagger2.example.module.DaggerMyComponent
+import tongtong.lapin.dagger2.example.module.MyClass
 import tongtong.lapin.dagger2.example.module.MyComponent
 
 /**
@@ -14,7 +15,8 @@ import tongtong.lapin.dagger2.example.module.MyComponent
 class ExampleUnitTest {
     @Test
     fun testHelloWorld() {
-        val myComponent = DaggerMyComponent.create()
-        System.out.println("result = ${myComponent.getString()}")
+        val myClass = MyClass()
+        DaggerMyComponent.create().inject(myClass)
+        System.out.println("result = ${myClass.injectedValue}")
     }
 }

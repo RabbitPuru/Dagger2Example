@@ -6,5 +6,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [MyModule::class])
 interface MyComponent {
-    fun getString(): String
+    fun inject(myClass: MyClass)
 }
